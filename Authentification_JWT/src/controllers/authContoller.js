@@ -135,7 +135,6 @@ const resetPassword = async (req, res) => {
     try {
         const decodedToken = jwtToken.verify(token, process.env.JWT_SECRET)
         if (decodedToken.id) {
-            console.log('hhhhh1')
             const user = await User.findById(decodedToken.id)
             user.password = password
             await user.save()
