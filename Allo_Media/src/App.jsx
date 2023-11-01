@@ -7,6 +7,7 @@ import EmailVerification from './Component/EmailVerification/index'
 import Home from './Component/Home'
 import ForgetPassword from './Component/ForgetPassword/index'
 import ResetPassword from './Component/ResetPassword'
+import AuthMiddleware from './Component/middleware'
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
         <Route path='/' element={<Athentification />} />
         <Route path='/login' element={<Login />} />
         <Route path="/email-verify" element={<EmailVerification />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/home" element={<AuthMiddleware><Home /></AuthMiddleware>} />
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
