@@ -71,6 +71,7 @@ input:focus {
 
 .input-img input {
     border-radius: 0px;
+    background: transparent;
 }
 
 .buttons {

@@ -14,7 +14,9 @@ function Home() {
 
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:9000/api/auth/logout');
+      console.log("1");
+      await axios.post('http://localhost:8080/api/auth/logout');
+      console.log("2");
       localStorage.clear(); 
       document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
       navigate("/login")

@@ -21,7 +21,7 @@ function ForgetPassword() {
     const handelSubmuit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:9000/api/auth/forgot-password", formData);
+            const response = await axios.post("http://localhost:8080/api/auth/forgot-password", formData);
             console.log(response.data);
         } catch (err) {
             console.log(err.message);

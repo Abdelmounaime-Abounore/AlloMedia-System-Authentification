@@ -116,7 +116,7 @@ const forgetPassword = async (req, res) => {
 
         const resetToken = jwt.sign({id: user._id}, process.env.JWT_SECRET, {expiresIn: '10m'})
 
-        const resetLink = `http://localhost:5173/reset-password?token=${resetToken}`; 
+        const resetLink = `http://localhost:3000/reset-password?token=${resetToken}`; 
         await sendEmail.sendEmail(user.email, 'Password Reset', resetLink);
 
         res.json({ message: 'Password reset link sent successfully.' });
