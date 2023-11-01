@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  api:
+    container_name: Authentification_JWT
+    build:
+      context: ./Authentification_JWT
+      dockerfile: ./Dockerfile
+    image: authentification_jwt:1.0.0
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./Authentification_JWT:/usr/src/app
+
+
+  web:
+    container_name: Allo_Media
+    build:
+      context: ./Allo_Media
+      dockerfile: ./Dockerfile
+    image: allo_media:1.0.0
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: bind
+        source: ./Allo_Media
+        target: /src/app
+    depends_on:
+      - api
