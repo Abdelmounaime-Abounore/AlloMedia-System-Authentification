@@ -25,3 +25,27 @@ const PORT = process.env.PORT
 db()
 app.listen(PORT, () => console.log(`server is running on port ${PORT}`) )
 
+// Swagger
+
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsdoc = require('swagger-jsdoc');
+const options = {
+    definition: {
+      openapi: '3.0.0',
+      info: {
+        title: 'API Documentation',
+        version: '1.0.0',
+        description: 'Documentation for the API endpoints',
+      },
+      servers:[
+        {
+            url: 'http://localhost:8080/'
+        }
+      ]
+    },
+    apis: ['src/routes/authRoutes.js', 'src/routes/clientRoutes.js', 'src/routes/deliveryRoutes.js'],
+  };
+
+const specs = swaggerJsdoc(options);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+
