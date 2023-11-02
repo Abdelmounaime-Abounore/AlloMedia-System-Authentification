@@ -43,28 +43,11 @@ const ResetPassword = () => {
     return (
       <div className="forgetPass">
       <div>
-          {/* <form action="" onSubmit={handelSubmuit}>
-              <div className='container'>
-                  <div className='resetPass'>
-                      <input className='' name="email" type="email" placeholder="Email Address" onChange={handelInputChange} />
-                  </div>
-                  <div>
-                      <button type="submit">submit</button>
-                  </div>
-                  <div>
-                      <Link to="/login">Login</Link>
-                  </div>
-                  <div>
-                      <Link to="/">Register</Link>
-                  </div>
-              </div>
-          </form> */}
           <div className='container'>
               <h1>Reset Password</h1>
               <form onSubmit={handleSubmit}>
                   <div className='form'>
                       <div className='inputs email-inp'>
-                          {/* <FontAwesomeIcon icon={faEnvelope} /> */}
                           <FontAwesomeIcon icon={faLock} />
                           <input type="password" name='password' placeholder='password .. ' value={formData.password} onChange={handleInputChange} />
                       </div>
@@ -83,10 +66,6 @@ const ResetPassword = () => {
               </form>
           </div>
       </div>
-      {/* <div className='res-pass-btn'>
-          <Link to="/" className="state">Register</Link>
-          <Link to="/" className="state">Login</Link>
-      </div> */}
   </div>
     );
 };
